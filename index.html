@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque Real</title>
+</head>
+<body style="background-color: rgb(58, 57, 56); color: rgb(77, 231, 38); font-size: xx-large;">
+    <h1 style="color: rgba(231, 33, 33, 0.863); text-align: center;">ESTOQUE REAL</h1>
+    <script>
+     //Saudação ao usuário  
+    alert("Olá, seja bem vindo ao Estoque Real!");
+    
+    //Breve explicação do que fazer no sistema estoque
+    alert("Sistema simples para controle de entrada e saída de ítens do estoque físico!");
+
+        //Entrada da quantidade atual de peças do estoque
+            
+        estoque_inicial=parseInt(prompt("Digite a quantidade de peças no estoque atual!"));
+        
+            //impressão da quantidade inicial                
+            
+            document.write("Quantidade Inicial:" + estoque_inicial +"<br>");
+           
+        //encerrar aplicação
+            
+        encerrar = "n";
+
+        //Laço de repetição da aplicação
+           
+        while(encerrar == "n")
+    {
+        //seleção de entrada de dados e inserção da quantidade de peças a registrar
+            
+        tipo = parseInt(prompt("Selecionar a opção desejada: \n 1 - Entrada de peças no estoque \n 2 - Saída de peças no Estoque"));
+            
+        quantidade = parseInt(prompt("Informar quantidade"));
+           
+        //após seleção da opção desejada pelo usuário, efetuar os calculos da entrada de dados
+            
+        if(tipo == 1)            
+        {           
+            estoque_inicial = estoque_inicial + quantidade;
+            document.write("Entrada: " + quantidade + "<br>");
+                        }
+                        if(tipo == 2)
+                        {                    
+                            if(estoque_inicial >= quantidade)
+                        {                            
+                        estoque_inicial = estoque_inicial -quantidade;
+                        document.write("Saída: " + quantidade + "<br>");
+                        }                
+                        else
+                        {                         
+                            document.write("Saldo insuficiente" + "<br>");
+                            alert("Saldo insuficiente");
+                         }
+                     }                
+                     document.write("Quantidade Atual: " + estoque_inicial + "<br>");                
+                     encerrar = prompt("Deseja encerrar a aplicação? (S/N)");
+    }
+        //impressao na tela da mensagem de sistema encerrado              
+        document.write("Sistema encerrado" + "<br>");
+    </script>
+</body>
+</html>
